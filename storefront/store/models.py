@@ -3,7 +3,7 @@ from django.db import models
 class Promotion(models.Model):
     description = models.CharField(max_length=255)
     discount = models.FloatField()
-    
+
 class Collection(models.Model):
     title = models.CharField(max_length=255)
     featured_product = models.ForeignKey('Product' , on_delete = models.SET_NULL,null=True,related_name='+')
@@ -44,8 +44,8 @@ class Order(models.Model):
     PAYMENT_STATUS_FAILED = 'F'
     
     PAYMENT_STATUS_CHOICES=[
-        (PAYMENT_STATUS_PENDING,'Pending')
-        (PAYMENT_STATUS_COMPLETE,'Complete')
+        (PAYMENT_STATUS_PENDING,'Pending'),
+        (PAYMENT_STATUS_COMPLETE,'Complete'),
         (PAYMENT_STATUS_FAILED,'Failed')
     ]
     
